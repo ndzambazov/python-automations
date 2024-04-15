@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source ./venv/bin/activate
+source ./youtube/bin/activate
 python3 ./downloader.py $1
