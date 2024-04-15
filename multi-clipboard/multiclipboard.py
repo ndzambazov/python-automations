@@ -3,9 +3,8 @@ import clipboard
 import json
 import os
 
-DATA_FILE = "clipboard.json"
-DATA_PATH = os.path.dirname(__file__)
-SAVED_DATA = "{}/{}".format(DATA_PATH, DATA_FILE)
+DATA_FILE = ".clipboard.json"
+SAVED_DATA = os.path.join(os.path.expanduser("~"), DATA_FILE)
 
 
 def del_item(filepath, data):
