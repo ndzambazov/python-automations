@@ -56,7 +56,6 @@ names = [context['name'] for context in parsed_yaml['contexts']]
 
 if len(sys.argv) > 1:
     arg_context_name = sys.argv[1]
-    print(names)
     if arg_context_name in names:
         color("INFO", f"Setting Kubernetes context to {arg_context_name}...")
         set_kube_context(arg_context_name)
