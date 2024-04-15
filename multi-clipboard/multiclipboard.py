@@ -23,7 +23,7 @@ def load_json(filepath):
             data = json.load(f)
             return data
     except Exception:
-        print("File doesnt exist .. Creating empty one.")
+        print("WARNING: File doesnt exist .. Creating empty one.")
         return {}
 
 
@@ -41,20 +41,24 @@ if len(sys.argv) == 2:
         key = input("Enter name: ")
         if key in data:
             clipboard.copy(data[key])
-            print("Data copied to clipboard!")
+            print("INFO: Data copied to clipboard!")
         else:
-            print("Key doesnt exist!")
+            print("ERROR: Key doesnt exist!")
     elif command == "list":
         print("OPERATION:", command)
         print(json.dumps(data, indent=4))
     elif command == "delete":
-        # TBD
         print("OPERATION:", command)
+        print(json.dumps(data, indent=4))
         key = input("Enter name: ")
         if key in data:
             del data[key]
+            print("INFO: Deleted")
+            print("OPERATION: list")
             print(json.dumps(data, indent=4))
             save_items(SAVED_DATA, data)
+        else:
+            print("ERROR: Key doesnt exist!")
     else:
         print("Unknown command")
 
