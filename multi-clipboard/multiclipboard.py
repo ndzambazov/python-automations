@@ -60,8 +60,8 @@ if len(sys.argv) == 2:
         else:
             print("ERROR: Key doesnt exist!")
     else:
-        print("Unknown command")
+        print("ERROR: Unknown command")
 
 else:
-    print("1 argument allowed")
+    print("ERROR: 1 argument allowed")
 
